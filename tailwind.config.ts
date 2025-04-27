@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,8 +19,49 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['SF Pro Display', 'sans-serif']
+        sans: ['Inter', 'Source Sans Pro', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+        display: ['Inter', 'sans-serif'],
+        mono: ['Geist Mono', 'monospace']
+      },
+      spacing: {
+        '2': '2px',
+        '4': '4px',
+        '8': '8px',
+        '12': '12px',
+        '16': '16px',
+        '32': '32px',
+        '64': '64px',
+      },
+      width: {
+        '320': '320px',
+        '400': '400px',
+        '480': '480px',
+        '640': '640px',
+        '720': '720px',
+        '840': '840px',
+      },
+      fontSize: {
+        'xs': '12px',
+        'sm': '14px',
+        'base': '16px',
+        'lg': '18px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '28px',
+        '4xl': '36px',
+      },
+      lineHeight: {
+        '14': '14px',
+        '16': '16px',
+        '17': '17px',
+        '20': '20px',
+        '24': '24px',
+        '26': '26px',
+        '32': '32px',
+        '36': '36px',
+        '40': '40px',
+        '44': '44px',
       },
       colors: {
         polaris: {
