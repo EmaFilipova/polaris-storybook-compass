@@ -7,7 +7,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { Toggle } from "@/components/ui/toggle"
 import { TypographyH1, TypographyLead, TypographyH3, TypographyP } from "@/components/ui/typography"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown, Edit } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 // Custom styled accordion that matches the design in the image
@@ -15,12 +15,47 @@ const StyleAccordion = () => {
   const [open, setOpen] = useState<string>("item-1")
   
   const items = [
-    { id: "item-1", title: "Accordion title", timestamp: "v. 12-07 12:45" },
+    { id: "item-1", title: "Accordion title", timestamp: "v. 12-07 12:45", expanded: true },
     { id: "item-2", title: "Accordion title", timestamp: "v. 12-07 12:45" },
     { id: "item-3", title: "Accordion title", timestamp: "v. 12-07 12:45" },
     { id: "item-4", title: "Accordion title", timestamp: "v. 12-07 12:45" },
     { id: "item-5", title: "Accordion title", timestamp: "v. 12-07 12:45" },
   ]
+
+  const renderAccordionContent = (itemId: string) => {
+    if (itemId === "item-1") {
+      return (
+        <div className="py-4">
+          <div className="flex items-start space-x-3">
+            <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+              <Edit className="h-4 w-4 text-gray-600" />
+            </div>
+            <div className="flex-1">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 overflow-hidden rounded-full">
+                  <img 
+                    src="/lovable-uploads/e732c47b-1f49-43f8-b8e7-f613fcdae287.png" 
+                    alt="User avatar"
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+                <div className="font-semibold text-gray-800">Toren Barrios</div>
+              </div>
+              <p className="mt-1 text-gray-700">
+                <span className="font-semibold">edited</span> story variant in the Facebook channel
+              </p>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    
+    return (
+      <div className="py-4">
+        <p>Content for this accordion item goes here. You can add any elements like text, images, or other components.</p>
+      </div>
+    )
+  }
 
   return (
     <div className="w-full max-w-3xl mx-auto">
@@ -30,26 +65,28 @@ const StyleAccordion = () => {
             key={item.id} 
             value={item.id}
             className={cn(
-              "border-0 rounded-md mb-2 overflow-hidden", 
+              "overflow-hidden mb-2", 
+              "rounded-md",
               open === item.id ? "bg-blue-50" : "bg-white",
-              "shadow-sm border"
+              "border border-blue-200"
             )}
           >
-            <AccordionTrigger className="px-4 py-4 hover:no-underline">
+            <AccordionTrigger 
+              className={cn(
+                "px-4 hover:no-underline",
+                open === item.id ? "border-b-0" : "",
+              )}
+            >
               <div className="flex justify-between w-full">
-                <span className="text-base font-medium">{item.title}</span>
+                <div className="flex items-center gap-2">
+                  <ChevronDown className="h-4 w-4 text-blue-600 shrink-0 transition-transform duration-200" />
+                  <span className="text-base font-medium text-blue-700">{item.title}</span>
+                </div>
                 <span className="text-sm text-gray-500">{item.timestamp}</span>
               </div>
             </AccordionTrigger>
-            <AccordionContent className="bg-white px-4">
-              <div className="py-4">
-                <p>Content for this accordion item goes here. You can add any elements like text, images, or other components.</p>
-                {item.id === "item-5" && (
-                  <div className="mt-4 p-4 bg-gray-50 rounded-md">
-                    <p className="text-sm text-gray-700">This is an example of additional content that can be displayed when the accordion is expanded.</p>
-                  </div>
-                )}
-              </div>
+            <AccordionContent className="bg-white border-transparent px-4">
+              {renderAccordionContent(item.id)}
             </AccordionContent>
           </AccordionItem>
         ))}
@@ -140,22 +177,23 @@ const AccordionPage = () => {
               <TypographyH3>Styled Accordion Usage</TypographyH3>
               <div className="bg-gray-50 p-4 rounded-md overflow-x-auto">
                 <pre className="text-sm font-mono">
-{`const [open, setOpen] = useState<string>("item-1");
-
-<Accordion type="single" value={open} onValueChange={setOpen} className="w-full">
+{`<Accordion type="single" value={open} onValueChange={setOpen} className="w-full">
   <AccordionItem 
     value="item-1" 
-    className="border-0 rounded-md mb-2 overflow-hidden bg-blue-50 shadow-sm border"
+    className="rounded-md mb-2 overflow-hidden border border-blue-200 bg-blue-50"
   >
     <AccordionTrigger className="px-4 py-4 hover:no-underline">
       <div className="flex justify-between w-full">
-        <span className="text-base font-medium">Accordion title</span>
+        <div className="flex items-center gap-2">
+          <ChevronDown className="h-4 w-4 text-blue-600" />
+          <span className="text-base font-medium text-blue-700">Accordion title</span>
+        </div>
         <span className="text-sm text-gray-500">v. 12-07 12:45</span>
       </div>
     </AccordionTrigger>
-    <AccordionContent className="bg-white px-4">
+    <AccordionContent className="bg-white border-transparent px-4">
       <div className="py-4">
-        <p>Content for this accordion item goes here.</p>
+        <p>Content goes here...</p>
       </div>
     </AccordionContent>
   </AccordionItem>
