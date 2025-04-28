@@ -46,4 +46,33 @@
   .apple-card {
     @apply backdrop-blur-xl bg-white/90 border border-gray-200/20 shadow-lg;
   }
+
+  /* Typography utility classes */
+  .text-title-serif {
+    @apply font-serif text-4xl font-bold leading-44;
+  }
+
+  .text-title-sans {
+    @apply font-sans text-4xl font-bold leading-44;
+  }
+
+  .text-subtitle {
+    @apply font-sans text-2xl font-medium leading-32;
+  }
+
+  .text-body-serif {
+    @apply font-serif text-base leading-24;
+  }
+
+  .text-body-sans {
+    @apply font-sans text-base leading-24;
+  }
+
+  .text-caption {
+    @apply font-sans text-sm leading-20;
+  }
+
+  .text-mono {
+    @apply font-mono text-sm leading-20;
+  }
 }
