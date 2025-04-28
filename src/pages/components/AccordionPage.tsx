@@ -1,4 +1,3 @@
-
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
@@ -18,54 +17,48 @@ const AccordionPage = () => {
 
         <Card>
           <CardHeader>
-            <CardTitle>Preview</CardTitle>
-            <CardDescription>Example implementations of the accordion component.</CardDescription>
+            <CardTitle>Interactive Example</CardTitle>
+            <CardDescription>Click on any item to expand or collapse its content.</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-4 md:grid-cols-2">
-              {/* White Background */}
-              <div className="space-y-4">
-                <TypographyH3>Version History (White)</TypographyH3>
-                <div className="rounded-md bg-white p-4">
-                  <Accordion type="single" defaultValue="item-1" className="w-full">
-                    <AccordionItem value="item-1" className="border-b border-polaris-gray-200">
-                      <AccordionTrigger className="flex justify-between hover:no-underline">
-                        <span className="text-sm font-medium">Accordion title</span>
-                        <span className="text-xs text-polaris-gray-400">v. 12-07 12:45</span>
-                      </AccordionTrigger>
-                      <AccordionContent className="text-sm">
-                        <div className="space-y-4">
-                          <img src="/lovable-uploads/c45cfb53-7617-4648-806b-438bcde6a1a2.png" alt="Coffee cup" className="rounded-lg" />
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </div>
-              </div>
+            <div className="rounded-md bg-white p-4">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>
+                    What is an accordion component?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    An accordion is a vertically stacked set of interactive headings that each reveal a section of content. 
+                    It's useful when you want to toggle between hiding and showing large amounts of content.
+                  </AccordionContent>
+                </AccordionItem>
 
-              {/* Gray Background */}
-              <div className="space-y-4">
-                <TypographyH3>Version History (Gray)</TypographyH3>
-                <div className="rounded-md bg-polaris-gray-100 p-4">
-                  <Accordion type="single" defaultValue="item-1" className="w-full">
-                    <AccordionItem value="item-1" className="border-b border-polaris-gray-200">
-                      <AccordionTrigger className="flex justify-between hover:no-underline">
-                        <span className="text-sm font-medium">Accordion title</span>
-                        <span className="text-xs text-polaris-gray-400">v. 12-07 12:45</span>
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <div className="space-y-2 text-sm">
-                          <p><strong>Contact person:</strong> Vanesa Rubino</p>
-                          <p><strong>Email:</strong> vrubino@shutterstock.com</p>
-                          <p><strong>Tel:</strong> +49 151 41449820 (Home-office)</p>
-                          <p><strong>URL:</strong> www.shutterstock.com</p>
-                          <p><strong>Address:</strong> Shutterstock GmbH,Landsberger Str. 302 80687 München/Shutterstock Inc.</p>
-                        </div>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </div>
-              </div>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>
+                    When should I use an accordion?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    Use accordions when you need to organize related information in a limited space. They're particularly 
+                    useful for FAQs, product descriptions, or navigation menus where you want to show one section at a time.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3">
+                  <AccordionTrigger>
+                    What's inside this accordion?
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="space-y-4">
+                      <img 
+                        src="/lovable-uploads/c45cfb53-7617-4648-806b-438bcde6a1a2.png" 
+                        alt="Coffee cup" 
+                        className="rounded-lg"
+                      />
+                      <p>This accordion item contains both text and an image to demonstrate how different types of content can be displayed.</p>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </CardContent>
         </Card>
@@ -110,4 +103,3 @@ const AccordionPage = () => {
 }
 
 export default AccordionPage
-
