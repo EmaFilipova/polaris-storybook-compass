@@ -65,22 +65,29 @@ const StyleAccordion = () => {
             key={item.id} 
             value={item.id}
             className={cn(
-              "overflow-hidden mb-2", 
+              "overflow-hidden mb-2",
               "rounded-md",
-              open === item.id ? "bg-blue-50" : "bg-white",
-              "border border-blue-200"
+              open === item.id ? "bg-white border-blue-500" : "bg-white border border-gray-300",
             )}
           >
             <AccordionTrigger 
               className={cn(
                 "px-4 hover:no-underline",
-                open === item.id ? "border-b-0" : "",
+                open === item.id ? "text-blue-700 border-b border-b-blue-500 rounded-t-md" : "text-black",
               )}
             >
               <div className="flex justify-between w-full">
                 <div className="flex items-center gap-2">
-                  <ChevronDown className="h-4 w-4 text-blue-600 shrink-0 transition-transform duration-200" />
-                  <span className="text-base font-medium text-blue-700">{item.title}</span>
+                  <ChevronDown className={cn(
+                    "h-4 w-4 shrink-0 transition-transform duration-200",
+                    open === item.id ? "text-blue-600" : "text-gray-600"
+                  )} />
+                  <span className={cn(
+                    "text-base font-medium", 
+                    open === item.id ? "text-blue-700" : "text-black"
+                  )}>
+                    {item.title}
+                  </span>
                 </div>
                 <span className="text-sm text-gray-500">{item.timestamp}</span>
               </div>
