@@ -141,8 +141,8 @@ const AccordionPage = () => {
                     <AccordionContent>
                       <div className="space-y-4">
                         <img 
-                          src="/lovable-uploads/e732c47b-1f49-43f8-b8e7-f613fcdae287.png" 
-                          alt="User interface example" 
+                          src="/lovable-uploads/c45cfb53-7617-4648-806b-438bcde6a1a2.png" 
+                          alt="Styled accordions example" 
                           className="rounded-lg"
                         />
                         <p>This accordion item contains both text and an image to demonstrate how different types of content can be displayed.</p>
