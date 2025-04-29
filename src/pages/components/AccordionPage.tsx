@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -25,27 +24,10 @@ const StyleAccordion = () => {
   const renderAccordionContent = (itemId: string) => {
     if (itemId === "item-1") {
       return (
-        <div className="py-4">
-          <div className="flex items-start space-x-3">
-            <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
-              <Edit className="h-4 w-4 text-gray-600" />
-            </div>
-            <div className="flex-1">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 overflow-hidden rounded-full">
-                  <img 
-                    src="/lovable-uploads/e732c47b-1f49-43f8-b8e7-f613fcdae287.png" 
-                    alt="User avatar"
-                    className="w-full h-full object-cover" 
-                  />
-                </div>
-                <div className="font-semibold text-gray-800">Toren Barrios</div>
-              </div>
-              <p className="mt-1 text-gray-700">
-                <span className="font-semibold">edited</span> story variant in the Facebook channel
-              </p>
-            </div>
-          </div>
+        <div className="space-y-1">
+          {Array(5).fill("EXAMPLE OF TEXT").map((text, index) => (
+            <p key={index} className="text-black">{text}</p>
+          ))}
         </div>
       )
     }
@@ -67,7 +49,7 @@ const StyleAccordion = () => {
             className={cn(
               "overflow-hidden mb-2",
               "rounded-md",
-              open === item.id ? "bg-white border-blue-500" : "bg-white border border-gray-300",
+              open === item.id ? "bg-white border border-blue-500" : "bg-white border border-gray-300",
             )}
           >
             <AccordionTrigger 
