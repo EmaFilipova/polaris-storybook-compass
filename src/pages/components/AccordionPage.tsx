@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -141,8 +140,8 @@ const AccordionPage = () => {
                     <AccordionContent>
                       <div className="space-y-4">
                         <img 
-                          src="/lovable-uploads/e732c47b-1f49-43f8-b8e7-f613fcdae287.png" 
-                          alt="Accordion UI example" 
+                          src="/lovable-uploads/033fa86c-a244-4281-a734-83c00b61c552.png" 
+                          alt="Styled accordion example" 
                           className="rounded-lg"
                         />
                         <p>This accordion item contains both text and an image to demonstrate how different types of content can be displayed.</p>
@@ -234,4 +233,3 @@ const AccordionPage = () => {
 }
 
 export default AccordionPage
-
