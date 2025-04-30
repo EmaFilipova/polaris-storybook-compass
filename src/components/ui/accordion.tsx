@@ -39,10 +39,8 @@ const AccordionTrigger = React.forwardRef<
             )}
             {...props}
           >
-            {open => open ? 
-              <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" /> : 
-              <ChevronRight className="h-4 w-4 shrink-0 transition-transform duration-200" />
-            }
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 data-[state=closed]:hidden" />
+            <ChevronRight className="h-4 w-4 shrink-0 transition-transform duration-200 data-[state=open]:hidden" />
           </AccordionPrimitive.Trigger>
           <div className="flex-1 ml-2">{children}</div>
         </div>
@@ -63,10 +61,8 @@ const AccordionTrigger = React.forwardRef<
         {...props}
       >
         <div className="flex items-center">
-          {open => open ? 
-            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 mr-2" /> : 
-            <ChevronRight className="h-4 w-4 shrink-0 transition-transform duration-200 mr-2" />
-          }
+          <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 mr-2 data-[state=closed]:hidden" />
+          <ChevronRight className="h-4 w-4 shrink-0 transition-transform duration-200 mr-2 data-[state=open]:hidden" />
           <span>{children}</span>
         </div>
       </AccordionPrimitive.Trigger>
