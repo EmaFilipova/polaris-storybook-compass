@@ -19,26 +19,52 @@ const AccordionItem = React.forwardRef<
 ))
 AccordionItem.displayName = "AccordionItem"
 
+interface AccordionTriggerProps extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
+  chevronOnly?: boolean;
+}
+
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
-        "[&[data-state=open]]:text-blue-700 [&[data-state=closed]]:text-black",
-        "[&[data-state=open]]:border-blue-500 [&[data-state=closed]]:border-gray-300",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-))
+  AccordionTriggerProps
+>(({ className, children, chevronOnly = false, ...props }, ref) => {
+  if (chevronOnly) {
+    return (
+      <AccordionPrimitive.Header className="flex">
+        <div className="flex flex-1 items-center justify-between py-4 font-medium">
+          <div className="flex-1">{children}</div>
+          <AccordionPrimitive.Trigger
+            ref={ref}
+            className={cn(
+              "inline-flex p-1 cursor-pointer rounded-full hover:bg-gray-100",
+              className
+            )}
+            {...props}
+          >
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 [&[data-state=open]]:rotate-180" />
+          </AccordionPrimitive.Trigger>
+        </div>
+      </AccordionPrimitive.Header>
+    );
+  }
+
+  return (
+    <AccordionPrimitive.Header className="flex">
+      <AccordionPrimitive.Trigger
+        ref={ref}
+        className={cn(
+          "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+          "[&[data-state=open]]:text-blue-700 [&[data-state=closed]]:text-black",
+          "[&[data-state=open]]:border-blue-500 [&[data-state=closed]]:border-gray-300",
+          className
+        )}
+        {...props}
+      >
+        {children}
+        <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
+  );
+})
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
 const AccordionContent = React.forwardRef<

@@ -53,17 +53,14 @@ const StyleAccordion = () => {
             )}
           >
             <AccordionTrigger 
+              chevronOnly={true}
               className={cn(
                 "px-4 hover:no-underline",
-                open === item.id ? "text-blue-700 border-b border-b-blue-500 rounded-t-md" : "text-black",
+                open === item.id ? "text-blue-700" : "text-black",
               )}
             >
               <div className="flex justify-between w-full">
                 <div className="flex items-center gap-2">
-                  <ChevronDown className={cn(
-                    "h-4 w-4 shrink-0 transition-transform duration-200",
-                    open === item.id ? "text-blue-600" : "text-gray-600"
-                  )} />
                   <span className={cn(
                     "text-base font-medium", 
                     open === item.id ? "text-blue-700" : "text-black"
