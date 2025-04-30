@@ -1,3 +1,4 @@
+
 import { useState } from "react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -6,7 +7,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { Toggle } from "@/components/ui/toggle"
 import { TypographyH1, TypographyLead, TypographyH3, TypographyP } from "@/components/ui/typography"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { ChevronDown, Edit } from "lucide-react"
+import { ChevronDown, ChevronRight, Edit } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 // Custom styled accordion that matches the design in the image
