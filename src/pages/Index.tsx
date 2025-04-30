@@ -48,14 +48,18 @@ const Index = () => {
       </header>
 
       <main className="container max-w-7xl py-16">
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {components.map((component) => (
-            <Card key={component.path} className="hover:shadow-md transition-shadow">
+            <Card 
+              key={component.path} 
+              className="hover:shadow-md transition-shadow rounded-lg"
+              style={{ backgroundColor: '#0552B5', borderRadius: '8px' }}
+            >
               <CardHeader>
-                <CardTitle className="text-xl">{component.name}</CardTitle>
+                <CardTitle className="text-xl text-white">{component.name}</CardTitle>
               </CardHeader>
               <CardContent>
-                <Button asChild className="w-full">
+                <Button asChild className="w-full bg-white text-[#0552B5] hover:bg-gray-100">
                   <Link to={component.path}>View Component</Link>
                 </Button>
               </CardContent>
