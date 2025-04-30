@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -12,10 +11,9 @@ import { cn } from "@/lib/utils"
 
 // Custom styled accordion that matches the design in the image
 const StyleAccordion = () => {
-  const [open, setOpen] = useState<string>("item-1")
+  const [open, setOpen] = useState<string>("item-2")
   
   const items = [
-    { id: "item-1", title: "Accordion title", timestamp: "v. 12-07 12:45", expanded: true },
     { id: "item-2", title: "Accordion title", timestamp: "v. 12-07 12:45" },
     { id: "item-3", title: "Accordion title", timestamp: "v. 12-07 12:45" },
     { id: "item-4", title: "Accordion title", timestamp: "v. 12-07 12:45" },
@@ -23,16 +21,6 @@ const StyleAccordion = () => {
   ]
 
   const renderAccordionContent = (itemId: string) => {
-    if (itemId === "item-1") {
-      return (
-        <div className="space-y-1">
-          {Array(5).fill("EXAMPLE OF TEXT").map((text, index) => (
-            <p key={index} className="text-black">{text}</p>
-          ))}
-        </div>
-      )
-    }
-    
     return (
       <div className="py-4">
         <p>Content for this accordion item goes here. You can add any elements like text, images, or other components.</p>
