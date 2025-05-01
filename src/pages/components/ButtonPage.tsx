@@ -104,8 +104,6 @@ export default function ButtonPage() {
           <CardContent>
             <div className="flex flex-wrap gap-4">
               <Button variant="destructive">Destructive</Button>
-              <Button variant="secondary">Secondary</Button>
-              <Button variant="link">Link Button</Button>
             </div>
           </CardContent>
         </Card>
