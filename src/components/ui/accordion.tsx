@@ -1,7 +1,7 @@
 
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDown, ChevronRight } from "lucide-react"
+import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -13,67 +13,31 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn(className)}
+    className={cn("border-b", className)}
     {...props}
   />
 ))
 AccordionItem.displayName = "AccordionItem"
 
-interface AccordionTriggerProps extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
-  chevronOnly?: boolean;
-}
-
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  AccordionTriggerProps
->(({ className, children, chevronOnly = false, ...props }, ref) => {
-  if (chevronOnly) {
-    return (
-      <AccordionPrimitive.Header className="flex">
-        <div className="flex flex-1 items-center justify-between py-4 font-medium">
-          <AccordionPrimitive.Trigger
-            ref={ref}
-            className={cn(
-              "inline-flex p-1 cursor-pointer rounded-full hover:bg-gray-100",
-              className
-            )}
-            {...props}
-          >
-            {open => open ? 
-              <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" /> : 
-              <ChevronRight className="h-4 w-4 shrink-0 transition-transform duration-200" />
-            }
-          </AccordionPrimitive.Trigger>
-          <div className="flex-1 ml-2">{children}</div>
-        </div>
-      </AccordionPrimitive.Header>
-    );
-  }
-
-  return (
-    <AccordionPrimitive.Header className="flex">
-      <AccordionPrimitive.Trigger
-        ref={ref}
-        className={cn(
-          "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline",
-          "[&[data-state=open]]:text-blue-700 [&[data-state=closed]]:text-black",
-          "[&[data-state=open]]:border-blue-500 [&[data-state=closed]]:border-gray-300",
-          className
-        )}
-        {...props}
-      >
-        <div className="flex items-center">
-          {open => open ? 
-            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 mr-2" /> : 
-            <ChevronRight className="h-4 w-4 shrink-0 transition-transform duration-200 mr-2" />
-          }
-          <span>{children}</span>
-        </div>
-      </AccordionPrimitive.Trigger>
-    </AccordionPrimitive.Header>
-  );
-})
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Trigger
+      ref={ref}
+      className={cn(
+        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+    </AccordionPrimitive.Trigger>
+  </AccordionPrimitive.Header>
+))
+AccordionTrigger.displayName = "AccordionTrigger"
 
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
@@ -81,13 +45,12 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down border-transparent"
+    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>
   </AccordionPrimitive.Content>
 ))
-
-AccordionContent.displayName = AccordionPrimitive.Content.displayName
+AccordionContent.displayName = "AccordionContent"
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
