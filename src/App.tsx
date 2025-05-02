@@ -8,6 +8,7 @@ import Index from "./pages/Index"
 import NotFound from "./pages/NotFound"
 import AccordionPage from "./pages/components/AccordionPage"
 import ButtonPage from "./pages/components/ButtonPage"
+import CheckboxPage from "./pages/components/CheckboxPage"
 
 const queryClient = new QueryClient()
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/components/accordion" element={<AccordionPage />} />
           <Route path="/components/button" element={<ButtonPage />} />
+          <Route path="/components/checkbox" element={<CheckboxPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
