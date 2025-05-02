@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound"
 import AccordionPage from "./pages/components/AccordionPage"
 import ButtonPage from "./pages/components/ButtonPage"
 import CheckboxPage from "./pages/components/CheckboxPage"
+import DateSelectPage from "./pages/components/DateSelectPage"
 
 const queryClient = new QueryClient()
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/components/button" element={<ButtonPage />} />
           <Route path="/components/checkbox" element={<CheckboxPage />} />
           <Route path="/components/check-box" element={<CheckboxPage />} /> {/* Added this route as an alternative */}
+          <Route path="/components/date-select" element={<DateSelectPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
