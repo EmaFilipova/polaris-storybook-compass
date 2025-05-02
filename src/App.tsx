@@ -10,6 +10,7 @@ import AccordionPage from "./pages/components/AccordionPage"
 import ButtonPage from "./pages/components/ButtonPage"
 import CheckboxPage from "./pages/components/CheckboxPage"
 import DateSelectPage from "./pages/components/DateSelectPage"
+import AvatarPage from "./pages/components/AvatarPage"
 
 const queryClient = new QueryClient()
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/components/checkbox" element={<CheckboxPage />} />
           <Route path="/components/check-box" element={<CheckboxPage />} /> {/* Added this route as an alternative */}
           <Route path="/components/date-select" element={<DateSelectPage />} />
+          <Route path="/components/avatar" element={<AvatarPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
