@@ -10,7 +10,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 export type DateSelectSize = "sm" | "md" | "lg";
 export type DateSelectState = "default" | "valid" | "error";
@@ -94,13 +93,16 @@ export const DateSelect: React.FC<DateSelectProps> = ({
             <CalendarIcon className="ml-2 h-4 w-4 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
+        <PopoverContent 
+          className="w-auto p-0 custom-calendar-popover rounded-[2px] border border-[#E3E3E3] bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.10),0px_0px_2px_0px_rgba(0,0,0,0.10)]" 
+          align="start"
+        >
           <Calendar
             mode="single"
             selected={date}
             onSelect={handleDateChange}
             initialFocus
-            className={cn("p-3 pointer-events-auto")}
+            className="custom-calendar p-3 pointer-events-auto"
           />
         </PopoverContent>
       </Popover>
