@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
@@ -94,7 +93,7 @@ export const DateSelect: React.FC<DateSelectProps> = ({
           </Button>
         </PopoverTrigger>
         <PopoverContent 
-          className="w-auto p-0 custom-calendar-popover rounded-[2px] border border-[#E3E3E3] bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.10),0px_0px_2px_0px_rgba(0,0,0,0.10)]" 
+          className="w-auto p-0 custom-calendar-popover" 
           align="start"
         >
           <Calendar
