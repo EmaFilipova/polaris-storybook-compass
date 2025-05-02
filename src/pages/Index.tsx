@@ -10,7 +10,7 @@ const components = [
   { name: "Button", path: "/components/button" },
   { name: "Content cards", path: "/components/content-cards" },
   { name: "Context menu", path: "/components/context-menu" },
-  { name: "Check box", path: "/components/check-box" },
+  { name: "Check box", path: "/components/checkbox" }, // Changed from check-box to checkbox
   { name: "Combo-box", path: "/components/combo-box" },
   { name: "Date select", path: "/components/date-select" },
   { name: "Dropdown", path: "/components/dropdown" },

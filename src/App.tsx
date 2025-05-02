@@ -23,6 +23,7 @@ const App = () => (
           <Route path="/components/accordion" element={<AccordionPage />} />
           <Route path="/components/button" element={<ButtonPage />} />
           <Route path="/components/checkbox" element={<CheckboxPage />} />
+          <Route path="/components/check-box" element={<CheckboxPage />} /> {/* Added this route as an alternative */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
