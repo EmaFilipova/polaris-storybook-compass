@@ -13,6 +13,7 @@ import DateSelectPage from "./pages/components/DateSelectPage"
 import AvatarPage from "./pages/components/AvatarPage"
 import TooltipPage from "./pages/components/TooltipPage"
 import ToggleSwitchPage from "./pages/components/ToggleSwitchPage"
+import ToastPage from "./pages/components/ToastPage"
 
 const queryClient = new QueryClient()
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/components/tooltip" element={<TooltipPage />} />
           <Route path="/components/toggle" element={<ToggleSwitchPage />} />
           <Route path="/components/toggle-switch" element={<ToggleSwitchPage />} /> {/* Alternative route */}
+          <Route path="/components/toast" element={<ToastPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
