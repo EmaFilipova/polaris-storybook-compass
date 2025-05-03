@@ -26,32 +26,44 @@ export default function AccordionPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left">
-                  Is it accessible?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left">
-                  Is it styled?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Yes. It comes with default styles that matches the other components&apos; aesthetic.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-left">
-                  Is it animated?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Yes. It&apos;s animated by default, but you can disable it if you prefer.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <div className="w-full max-w-[592px]">
+              <Accordion type="single" collapsible className="w-full border border-dashed border-purple-300 p-4 rounded-md">
+                <AccordionItem value="item-1" className="mb-2 border-none">
+                  <AccordionTrigger className="text-left">
+                    Accordion title
+                  </AccordionTrigger>
+                </AccordionItem>
+                
+                <AccordionItem value="item-2" className="mb-2 border-none">
+                  <AccordionTrigger className="text-left data-[state=open]:bg-white">
+                    Accordion title
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="border border-[#E3E3E3] rounded-[4px] p-4 mt-2 bg-white">
+                      Content for this accordion item goes here. You can add any content you want.
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-3" className="mb-2 border-none">
+                  <AccordionTrigger className="text-left">
+                    Accordion title
+                  </AccordionTrigger>
+                </AccordionItem>
+                
+                <AccordionItem value="item-4" className="mb-2 border-none">
+                  <AccordionTrigger className="text-left">
+                    Accordion title
+                  </AccordionTrigger>
+                </AccordionItem>
+                
+                <AccordionItem value="item-5" className="border-none">
+                  <AccordionTrigger className="text-left">
+                    Accordion title
+                  </AccordionTrigger>
+                </AccordionItem>
+              </Accordion>
+            </div>
           </CardContent>
         </Card>
 
@@ -63,32 +75,42 @@ export default function AccordionPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            <Accordion type="multiple" className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-left">
-                  First section
-                </AccordionTrigger>
-                <AccordionContent>
-                  This accordion can have multiple sections open at the same time. Try clicking on another section without closing this one.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-left">
-                  Second section
-                </AccordionTrigger>
-                <AccordionContent>
-                  By setting the type prop to "multiple", we allow users to expand multiple sections simultaneously.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-left">
-                  Third section
-                </AccordionTrigger>
-                <AccordionContent>
-                  This is useful for interfaces where users might want to compare content across multiple sections.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <div className="w-full max-w-[592px]">
+              <Accordion type="multiple" className="w-full border border-dashed border-purple-300 p-4 rounded-md">
+                <AccordionItem value="item-1" className="mb-2 border-none">
+                  <AccordionTrigger className="text-left">
+                    Accordion title
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="border border-[#E3E3E3] rounded-[4px] p-4 mt-2 bg-white">
+                      This accordion can have multiple sections open at the same time.
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-2" className="mb-2 border-none">
+                  <AccordionTrigger className="text-left">
+                    Accordion title
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="border border-[#E3E3E3] rounded-[4px] p-4 mt-2 bg-white">
+                      By setting the type prop to "multiple", we allow users to expand multiple sections simultaneously.
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-3" className="border-none">
+                  <AccordionTrigger className="text-left">
+                    Accordion title
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="border border-[#E3E3E3] rounded-[4px] p-4 mt-2 bg-white">
+                      This is useful for interfaces where users might want to compare content across multiple sections.
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
           </CardContent>
         </Card>
       </div>

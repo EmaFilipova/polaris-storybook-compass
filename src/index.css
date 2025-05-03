@@ -24,6 +24,8 @@
     --input: 240 5.9% 90%;
     --ring: 240 5% 64.9%;
     --radius: 0.5rem;
+    --Colors-Border-light: #E3E3E3;
+    --Colors-Content-light: #FFF;
   }
 }
 
@@ -74,6 +76,21 @@
   .text-mono {
     @apply font-mono text-sm leading-20;
   }
+}
+
+/* Custom accordion styles */
+.custom-accordion-item {
+  width: 592px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--Colors-Border-light);
+  background: var(--Colors-Content-light);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.08) inset;
+  flex-shrink: 0;
 }
 
 /* Custom Calendar Styles */
