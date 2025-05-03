@@ -12,6 +12,7 @@ import CheckboxPage from "./pages/components/CheckboxPage"
 import DateSelectPage from "./pages/components/DateSelectPage"
 import AvatarPage from "./pages/components/AvatarPage"
 import TooltipPage from "./pages/components/TooltipPage"
+import ToggleSwitchPage from "./pages/components/ToggleSwitchPage"
 
 const queryClient = new QueryClient()
 
@@ -30,6 +31,8 @@ const App = () => (
           <Route path="/components/date-select" element={<DateSelectPage />} />
           <Route path="/components/avatar" element={<AvatarPage />} />
           <Route path="/components/tooltip" element={<TooltipPage />} />
+          <Route path="/components/toggle" element={<ToggleSwitchPage />} />
+          <Route path="/components/toggle-switch" element={<ToggleSwitchPage />} /> {/* Alternative route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
