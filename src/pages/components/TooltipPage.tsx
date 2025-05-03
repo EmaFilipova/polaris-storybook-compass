@@ -25,7 +25,7 @@ const TooltipPage = () => {
                     <Info className="h-4 w-4" />
                   </Button>
                 </TooltipTrigger>
-                <TooltipContent className="custom-tooltip">
+                <TooltipContent>
                   This is a tooltip with helpful information
                 </TooltipContent>
               </Tooltip>
@@ -41,7 +41,7 @@ const TooltipPage = () => {
                 <TooltipTrigger asChild>
                   <Button variant="outline">Tooltip Top</Button>
                 </TooltipTrigger>
-                <TooltipContent side="top" className="custom-tooltip">
+                <TooltipContent side="top">
                   Appears above the element
                 </TooltipContent>
               </Tooltip>
@@ -52,7 +52,7 @@ const TooltipPage = () => {
                 <TooltipTrigger asChild>
                   <Button variant="outline">Tooltip Right</Button>
                 </TooltipTrigger>
-                <TooltipContent side="right" className="custom-tooltip">
+                <TooltipContent side="right">
                   Appears to the right of the element
                 </TooltipContent>
               </Tooltip>
@@ -63,7 +63,7 @@ const TooltipPage = () => {
                 <TooltipTrigger asChild>
                   <Button variant="outline">Tooltip Bottom</Button>
                 </TooltipTrigger>
-                <TooltipContent side="bottom" className="custom-tooltip">
+                <TooltipContent side="bottom">
                   Appears below the element
                 </TooltipContent>
               </Tooltip>
@@ -74,7 +74,7 @@ const TooltipPage = () => {
                 <TooltipTrigger asChild>
                   <Button variant="outline">Tooltip Left</Button>
                 </TooltipTrigger>
-                <TooltipContent side="left" className="custom-tooltip">
+                <TooltipContent side="left">
                   Appears to the left of the element
                 </TooltipContent>
               </Tooltip>
@@ -93,7 +93,7 @@ const TooltipPage = () => {
                     More Information
                   </Button>
                 </TooltipTrigger>
-                <TooltipContent className="custom-tooltip">
+                <TooltipContent>
                   Tooltips are brief, informative messages that appear when users hover over, 
                   focus on, or tap an element. They provide helpful context or explanations 
                   without cluttering the interface.

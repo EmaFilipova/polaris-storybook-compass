@@ -19,11 +19,15 @@ const TooltipContent = React.forwardRef<
     sideOffset={sideOffset}
     className={cn(
       "z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-      "custom-tooltip-content inline-flex items-center shadow-[0px_0px_4px_0px_rgba(0,0,0,0.04)]",
+      "custom-tooltip",
       className
     )}
     {...props}
-  />
+  >
+    <div className="custom-tooltip-content">
+      {props.children}
+    </div>
+  </TooltipPrimitive.Content>
 ))
 TooltipContent.displayName = TooltipPrimitive.Content.displayName
 

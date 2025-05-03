@@ -153,6 +153,15 @@
 
 /* Custom Tooltip Styles */
 .custom-tooltip {
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.04);
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.custom-tooltip-content {
   display: flex;
   padding: 8px 12px;
   justify-content: center;
@@ -167,12 +176,11 @@
   line-height: 14px;
   letter-spacing: 0.4px;
   max-width: 340px;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.04);
-  border: none;
+  position: relative;
 }
 
-/* Custom tooltip arrow (beak) */
-.custom-tooltip::before {
+/* Custom tooltip arrow (beak) using pseudo-element */
+.custom-tooltip-content::before {
   content: "";
   position: absolute;
   width: 8px;
@@ -182,24 +190,26 @@
 }
 
 /* Position the arrow based on the tooltip position */
-.custom-tooltip[data-side="top"]::before {
+.custom-tooltip[data-side="top"] .custom-tooltip-content::before {
   bottom: -4px;
+  left: 50%;
+  margin-left: -4px;
 }
 
-.custom-tooltip[data-side="right"]::before {
+.custom-tooltip[data-side="right"] .custom-tooltip-content::before {
   left: -4px;
+  top: 50%;
+  margin-top: -4px;
 }
 
-.custom-tooltip[data-side="bottom"]::before {
+.custom-tooltip[data-side="bottom"] .custom-tooltip-content::before {
   top: -4px;
+  left: 50%;
+  margin-left: -4px;
 }
 
-.custom-tooltip[data-side="left"]::before {
+.custom-tooltip[data-side="left"] .custom-tooltip-content::before {
   right: -4px;
-}
-
-/* Custom tooltip content container */
-.custom-tooltip-content {
-  --arrow-size: 8px;
-  --arrow-offset: -4px;
+  top: 50%;
+  margin-top: -4px;
 }
