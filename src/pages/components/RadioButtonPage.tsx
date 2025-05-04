@@ -25,7 +25,7 @@ const RadioButtonPage = () => {
       {/* Basic Radio Buttons */}
       <section className="radio-group-demo-section">
         <h2 className="text-xl font-semibold mb-4">Basic Radio Button</h2>
-        <RadioGroup className="gap-4">
+        <RadioGroup defaultValue="option1" className="gap-4">
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="option1" id="option1" />
           </div>
@@ -35,7 +35,7 @@ const RadioButtonPage = () => {
       {/* Radio Button with Label */}
       <section className="radio-group-demo-section">
         <h2 className="text-xl font-semibold mb-4">Radio Button with Label</h2>
-        <RadioGroup className="gap-4">
+        <RadioGroup defaultValue="option1" className="gap-4">
           <div className="flex items-center space-x-2">
             <span className="text-pink-500">icon</span>
             <RadioGroupItem value="option1" id="r-option1" />
@@ -103,11 +103,13 @@ const RadioButtonPage = () => {
       {/* With Number Value */}
       <section className="radio-group-demo-section">
         <h2 className="text-xl font-semibold mb-4">With Number</h2>
-        <div className="radio-group-with-number">
-          <span className="radio-number">24</span>
-          <RadioGroupItem value="option1" id="r-option9" />
-          <span className="radio-number ml-2">20</span>
-        </div>
+        <RadioGroup defaultValue="option1">
+          <div className="radio-group-with-number">
+            <span className="radio-number">24</span>
+            <RadioGroupItem value="option1" id="r-option9" />
+            <span className="radio-number ml-2">20</span>
+          </div>
+        </RadioGroup>
       </section>
 
       {/* Multi-line Label */}
@@ -115,10 +117,12 @@ const RadioButtonPage = () => {
         <h2 className="text-xl font-semibold mb-4">Multiline Label</h2>
         <div className="flex">
           <div className="flex flex-col">
-            <div className="flex items-center mb-1">
-              <RadioGroupItem value="option1" id="r-multiline1" />
-              <Label htmlFor="r-multiline1" className="ml-2">Label</Label>
-            </div>
+            <RadioGroup defaultValue="option1">
+              <div className="flex items-center mb-1">
+                <RadioGroupItem value="option1" id="r-multiline1" />
+                <Label htmlFor="r-multiline1" className="ml-2">Label</Label>
+              </div>
+            </RadioGroup>
             <div className="text-pink-500 text-sm ml-6">4</div>
           </div>
           
@@ -133,19 +137,21 @@ const RadioButtonPage = () => {
       {/* Feature Toggle */}
       <section className="radio-group-demo-section">
         <h2 className="text-xl font-semibold mb-4">Feature Toggle</h2>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="enabled" id="feature-toggle" checked />
-          <Label htmlFor="feature-toggle">Enable feature</Label>
-        </div>
+        <RadioGroup defaultValue="enabled">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="enabled" id="feature-toggle" />
+            <Label htmlFor="feature-toggle">Enable feature</Label>
+          </div>
+        </RadioGroup>
       </section>
 
       {/* Radio Items Group */}
       <section className="radio-group-demo-section">
         <h2 className="text-xl font-semibold mb-4">Radio Items Group</h2>
         <div className="relative">
-          <div className="radio-items-container">
+          <RadioGroup defaultValue="enabled" className="radio-items-container">
             <div className="flex items-center space-x-2">
-              <RadioGroupItem value="enabled" id="feature-toggle-1" checked />
+              <RadioGroupItem value="enabled" id="feature-toggle-1" />
               <Label htmlFor="feature-toggle-1">Enable feature</Label>
             </div>
             <div className="flex items-center space-x-2">
@@ -156,17 +162,19 @@ const RadioButtonPage = () => {
               <RadioGroupItem value="disabled-2" id="feature-toggle-3" />
               <Label htmlFor="feature-toggle-3">Enable feature</Label>
             </div>
-          </div>
+          </RadioGroup>
         </div>
       </section>
 
       {/* Standalone Feature Toggle */}
       <section className="radio-group-demo-section">
         <h2 className="text-xl font-semibold mb-4">Standalone Feature Toggle</h2>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="enabled" id="standalone-toggle" checked />
-          <Label htmlFor="standalone-toggle">Enable feature</Label>
-        </div>
+        <RadioGroup defaultValue="enabled">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="enabled" id="standalone-toggle" />
+            <Label htmlFor="standalone-toggle">Enable feature</Label>
+          </div>
+        </RadioGroup>
       </section>
 
       {/* Horizontal Radio Group */}
@@ -174,7 +182,7 @@ const RadioButtonPage = () => {
         <h2 className="text-xl font-semibold mb-4">Horizontal Radio Group</h2>
         <RadioGroup className="radio-group-horizontal" defaultValue="option1">
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option1" id="horizontal-1" checked />
+            <RadioGroupItem value="option1" id="horizontal-1" />
             <Label htmlFor="horizontal-1">Enable feature</Label>
           </div>
           <div className="flex items-center space-x-2">
@@ -192,7 +200,7 @@ const RadioButtonPage = () => {
       <section className="radio-group-demo-section">
         <h2 className="text-xl font-semibold mb-4">Responsive Radio Groups</h2>
         <div className="flex mb-8">
-          <div className="flex flex-col gap-3">
+          <RadioGroup defaultValue="desktop-1" className="flex flex-col gap-3">
             {[1, 2, 3].map((item) => (
               <div key={`desktop-${item}`} className="flex items-center">
                 <div className="text-pink-500 mr-1">4</div>
@@ -200,12 +208,12 @@ const RadioButtonPage = () => {
                 <Label htmlFor={`desktop-${item}`} className="ml-2">Label</Label>
               </div>
             ))}
-          </div>
+          </RadioGroup>
           <span className="section-label">desktop</span>
         </div>
 
         <div className="flex">
-          <div className="flex flex-col gap-3">
+          <RadioGroup defaultValue="mobile-1" className="flex flex-col gap-3">
             {[1, 2, 3].map((item) => (
               <div key={`mobile-${item}`} className="flex items-center">
                 <div className="text-pink-500 mr-1">8</div>
@@ -213,7 +221,7 @@ const RadioButtonPage = () => {
                 <Label htmlFor={`mobile-${item}`} className="ml-2">Label</Label>
               </div>
             ))}
-          </div>
+          </RadioGroup>
           <span className="section-label">mobile</span>
         </div>
       </section>
@@ -224,7 +232,7 @@ const RadioButtonPage = () => {
 
         {/* Desktop Multi-select */}
         <div className="multi-select-group mb-8">
-          <div className="flex flex-col gap-3">
+          <RadioGroup defaultValue="multi-desktop-1" className="flex flex-col gap-3">
             {[1, 2, 3].map((item) => (
               <div key={`multi-desktop-${item}`} className="flex items-center">
                 <div className="text-pink-500 mr-1">4</div>
@@ -232,13 +240,13 @@ const RadioButtonPage = () => {
                 <Label htmlFor={`multi-desktop-${item}`} className="ml-2">Label</Label>
               </div>
             ))}
-          </div>
+          </RadioGroup>
           <span className="section-label">desktop</span>
         </div>
 
         {/* Mobile Multi-select */}
         <div className="multi-select-group">
-          <div className="flex flex-col gap-3">
+          <RadioGroup defaultValue="multi-mobile-1" className="flex flex-col gap-3">
             {[1, 2, 3].map((item) => (
               <div key={`multi-mobile-${item}`} className="flex items-center">
                 <div className="text-pink-500 mr-1">4</div>
@@ -246,7 +254,7 @@ const RadioButtonPage = () => {
                 <Label htmlFor={`multi-mobile-${item}`} className="ml-2">Label</Label>
               </div>
             ))}
-          </div>
+          </RadioGroup>
           <span className="section-label">mobile</span>
         </div>
       </section>
@@ -255,7 +263,7 @@ const RadioButtonPage = () => {
       <section className="radio-group-demo-section">
         <h2 className="text-xl font-semibold mb-4">Hit Area Example</h2>
         <div className="checkbox-group-area">
-          <div className="flex flex-col gap-4">
+          <RadioGroup defaultValue="hit-area-1" className="flex flex-col gap-4">
             {[1, 2, 3].map((item) => (
               <div key={`hit-area-${item}`} className="checkbox-item-hit-area flex items-center">
                 <RadioGroupItem value={`hit-area-${item}`} id={`hit-area-${item}`} />
@@ -264,7 +272,7 @@ const RadioButtonPage = () => {
                 </Label>
               </div>
             ))}
-          </div>
+          </RadioGroup>
         </div>
       </section>
     </div>
