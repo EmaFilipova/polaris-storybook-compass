@@ -36,8 +36,8 @@ const Pill = React.forwardRef<HTMLDivElement, PillProps>(
         ref={ref}
         className={cn(pillVariants({ variant }), "rounded-full", className)}
         style={{
-          padding: "2px 2px 2px 10px",  // Asymmetric padding as shown in design
-          borderRadius: "100px",        // Fully rounded corners
+          padding: dismissible ? "2px 2px 2px 10px" : "4px 10px",  // Different padding for dismissible vs non-dismissible
+          borderRadius: "100px",
           display: "inline-flex",
           alignItems: "center",
           gap: "8px",
