@@ -8,6 +8,7 @@
 @import './components/ui/tooltip.css';
 @import './components/ui/toast.css';
 @import './components/ui/radio-group.css';
+@import './components/ui/pill.css';
 
 @layer base {
   :root {

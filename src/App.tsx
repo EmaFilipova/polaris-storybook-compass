@@ -17,6 +17,7 @@ import ToastPage from "./pages/components/ToastPage"
 import RadioButtonPage from "./pages/components/RadioButtonPage"
 import ModalPage from "./pages/components/ModalPage"
 import InlineInfoPage from "./pages/components/InlineInfoPage"
+import PillPage from "./pages/components/PillPage"
 
 const queryClient = new QueryClient()
 
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/components/radio" element={<RadioButtonPage />} /> {/* Alternative route */}
           <Route path="/components/modal" element={<ModalPage />} />
           <Route path="/components/inline-info" element={<InlineInfoPage />} /> {/* Added new inline-info route */}
+          <Route path="/components/pill" element={<PillPage />} /> {/* Added new pill route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
