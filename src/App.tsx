@@ -15,6 +15,7 @@ import TooltipPage from "./pages/components/TooltipPage"
 import ToggleSwitchPage from "./pages/components/ToggleSwitchPage"
 import ToastPage from "./pages/components/ToastPage"
 import RadioButtonPage from "./pages/components/RadioButtonPage"
+import ModalPage from "./pages/components/ModalPage"
 
 const queryClient = new QueryClient()
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/components/toast" element={<ToastPage />} />
           <Route path="/components/radio-button" element={<RadioButtonPage />} />
           <Route path="/components/radio" element={<RadioButtonPage />} /> {/* Alternative route */}
+          <Route path="/components/modal" element={<ModalPage />} /> {/* Added new modal route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
