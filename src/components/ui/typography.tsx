@@ -28,6 +28,7 @@ export function TypographyH3({ children, className, ...props }: TypographyProps)
     <h3 className={cn("text-2xl font-semibold", className)} {...props}>
       {children}
     </h3>
+  )
 }
 
 export function TypographyP({ children, className, ...props }: TypographyProps) {
