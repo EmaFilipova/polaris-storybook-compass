@@ -73,14 +73,30 @@ const SegmentedControl = React.forwardRef<HTMLDivElement, SegmentedControlProps>
     itemSize = "default",
     ...props 
   }, ref) => {
+    // Create type-specific props based on the type (single or multiple)
+    const typeSpecificProps = React.useMemo(() => {
+      if (type === "multiple") {
+        return {
+          type: "multiple" as const,
+          value: Array.isArray(value) ? value : value ? [value] : undefined,
+          onValueChange,
+          defaultValue: Array.isArray(defaultValue) ? defaultValue : defaultValue ? [defaultValue] : undefined,
+        };
+      } else {
+        return {
+          type: "single" as const,
+          value: Array.isArray(value) ? value[0] : value,
+          onValueChange: (val: string) => onValueChange?.(val),
+          defaultValue: Array.isArray(defaultValue) ? defaultValue[0] : defaultValue,
+        };
+      }
+    }, [type, value, onValueChange, defaultValue]);
+
     return (
       <ToggleGroup
         ref={ref}
-        type={type}
-        value={value}
-        onValueChange={onValueChange}
-        defaultValue={defaultValue}
         className={cn(segmentedControlVariants({ variant, size, className }))}
+        {...typeSpecificProps}
         {...props}
       >
         {items.map((item) => (
