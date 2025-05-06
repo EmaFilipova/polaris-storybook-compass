@@ -50,13 +50,13 @@ const segmentItemVariants = cva(
 export interface SegmentedControlProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof segmentedControlVariants> {
-  value?: string
-  onValueChange?: (value: string) => void
-  defaultValue?: string
-  type?: "single" | "multiple"
-  items?: Array<{ value: string; label: string }>
-  itemVariant?: VariantProps<typeof segmentItemVariants>["variant"]
-  itemSize?: VariantProps<typeof segmentItemVariants>["size"]
+  value?: string | string[];
+  onValueChange?: (value: string | string[]) => void;
+  defaultValue?: string | string[];
+  type?: "single" | "multiple";
+  items?: Array<{ value: string; label: string }>;
+  itemVariant?: VariantProps<typeof segmentItemVariants>["variant"];
+  itemSize?: VariantProps<typeof segmentItemVariants>["size"];
 }
 
 const SegmentedControl = React.forwardRef<HTMLDivElement, SegmentedControlProps>(
