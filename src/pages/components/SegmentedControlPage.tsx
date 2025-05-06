@@ -9,6 +9,7 @@ export default function SegmentedControlPage() {
   const [viewValue, setViewValue] = useState("day");
   const [layoutValue, setLayoutValue] = useState("label1");
   const [multiValue, setMultiValue] = useState<string[]>([]);
+  const [tabValue, setTabValue] = useState("all");
 
   // Time options - Complex example
   const timeOptions = [
@@ -43,6 +44,23 @@ export default function SegmentedControlPage() {
     { value: "option3", label: "Option 3" },
   ];
 
+  // Tab options - For equal width example
+  const tabOptions = [
+    { value: "all", label: "All" },
+    { value: "active", label: "Active" },
+    { value: "completed", label: "Completed" },
+    { value: "archived", label: "Archived" },
+  ];
+
+  // Equal width options
+  const equalOptions = [
+    { value: "label1", label: "Label" },
+    { value: "label2", label: "Label" },
+    { value: "label3", label: "Label" },
+    { value: "label4", label: "Label" },
+    { value: "label5", label: "Label" },
+  ];
+
   return (
     <div className="container max-w-7xl py-10">
       <div className="space-y-8">
@@ -70,10 +88,78 @@ export default function SegmentedControlPage() {
                 items={viewOptions}
                 value={viewValue}
                 onValueChange={(value) => setViewValue(value as string)}
+                itemVariant="blue"
               />
               <TypographyP className="text-sm text-gray-500 mt-2">
                 Selected value: {viewValue}
               </TypographyP>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Design Examples</CardTitle>
+            <CardDescription>
+              Examples matching the design in the documentation.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-8">
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <TypographyH3 className="text-base">Standard Layout</TypographyH3>
+                <SegmentedControl
+                  items={equalOptions}
+                  defaultValue={equalOptions[0].value}
+                  className="segmented-control"
+                  itemVariant="blue"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <TypographyH3 className="text-base">Selected State (Blue Background)</TypographyH3>
+                <SegmentedControl
+                  items={[
+                    { value: "label1", label: "Label" },
+                    { value: "label2", label: "Label" },
+                  ]}
+                  defaultValue="label1"
+                  className="w-[328px]"
+                  itemVariant="blue"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <TypographyH3 className="text-base">Full Width Equal Segments</TypographyH3>
+                <SegmentedControl
+                  items={[
+                    { value: "label1", label: "Label" },
+                    { value: "label2", label: "Label" },
+                    { value: "label3", label: "Label" },
+                  ]}
+                  defaultValue="label1"
+                  fullWidth
+                  equal
+                  itemVariant="blue"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <TypographyH3 className="text-base">Equal Width with Multiple Items</TypographyH3>
+                <SegmentedControl
+                  items={[
+                    { value: "label1", label: "Label" },
+                    { value: "label2", label: "Label" },
+                    { value: "label3", label: "Label" },
+                    { value: "label4", label: "Label" },
+                    { value: "label5", label: "Label" },
+                  ]}
+                  defaultValue="label1"
+                  fullWidth
+                  equal
+                  itemVariant="blue"
+                />
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -102,6 +188,7 @@ export default function SegmentedControlPage() {
                   value={layoutValue}
                   onValueChange={(value) => setLayoutValue(value as string)}
                   itemVariant="pill"
+                  variant="pill"
                 />
               </div>
               <div className="space-y-2">
@@ -111,6 +198,16 @@ export default function SegmentedControlPage() {
                   value={layoutValue}
                   onValueChange={(value) => setLayoutValue(value as string)}
                   itemVariant="subtle"
+                />
+              </div>
+              <div className="space-y-2">
+                <TypographyH3 className="text-base">Elevated Variant</TypographyH3>
+                <SegmentedControl
+                  items={layoutOptions}
+                  value={layoutValue}
+                  onValueChange={(value) => setLayoutValue(value as string)}
+                  variant="elevated"
+                  itemVariant="blue"
                 />
               </div>
             </div>
@@ -130,10 +227,39 @@ export default function SegmentedControlPage() {
               items={multiOptions}
               value={multiValue}
               onValueChange={(value) => setMultiValue(value as string[])}
+              itemVariant="blue"
             />
             <TypographyP className="text-sm text-gray-500">
               Selected values: {multiValue.join(", ") || "none"}
             </TypographyP>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Full Width Tabs</CardTitle>
+            <CardDescription>
+              A segmented control that expands to fill the available width, useful for tabs.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <SegmentedControl
+              items={tabOptions}
+              value={tabValue}
+              onValueChange={(value) => setTabValue(value as string)}
+              fullWidth
+              itemVariant="blue"
+            />
+            <TypographyP className="text-sm text-gray-500">
+              Active tab: {tabValue}
+            </TypographyP>
+            
+            <div className="p-4 bg-gray-100 rounded-lg mt-4">
+              <div className="text-sm text-gray-600">
+                Full width segmented controls are ideal for tab navigation systems where each option should
+                have equal prominence.
+              </div>
+            </div>
           </CardContent>
         </Card>
 
@@ -151,6 +277,7 @@ export default function SegmentedControlPage() {
               onValueChange={(value) => setTimeValue(value as string)}
               className="w-full overflow-x-auto segmented-control-scrollable"
               size="sm"
+              itemVariant="blue"
             />
             <TypographyP className="text-sm text-gray-500">
               Selected time range: {timeValue}
@@ -181,6 +308,7 @@ export default function SegmentedControlPage() {
                   itemSize="sm"
                   size="sm"
                   defaultValue={layoutOptions[0].value}
+                  itemVariant="blue"
                 />
               </div>
               <div className="space-y-2">
@@ -188,6 +316,7 @@ export default function SegmentedControlPage() {
                 <SegmentedControl
                   items={layoutOptions}
                   defaultValue={layoutOptions[0].value}
+                  itemVariant="blue"
                 />
               </div>
               <div className="space-y-2">
@@ -197,6 +326,7 @@ export default function SegmentedControlPage() {
                   itemSize="lg"
                   size="lg"
                   defaultValue={layoutOptions[0].value}
+                  itemVariant="blue"
                 />
               </div>
             </div>
