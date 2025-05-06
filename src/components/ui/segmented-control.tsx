@@ -1,8 +1,8 @@
-
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { type Direction } from "@radix-ui/react-toggle-group"
 
 const segmentedControlVariants = cva(
   "inline-flex rounded-md border p-1 bg-white shadow-sm",
@@ -91,14 +91,14 @@ const SegmentedControl = React.forwardRef<HTMLDivElement, SegmentedControlProps>
         return {
           type: "multiple" as const,
           value: Array.isArray(value) ? value : value ? [value] : undefined,
-          onValueChange: onValueChange as (value: string[]) => void,
+          onValueChange: onValueChange as ((value: string[]) => void) | undefined,
           defaultValue: Array.isArray(defaultValue) ? defaultValue : defaultValue ? [defaultValue] : undefined,
         };
       } else {
         return {
           type: "single" as const,
           value: Array.isArray(value) ? value[0] : value,
-          onValueChange: (val: string) => onValueChange?.(val),
+          onValueChange: onValueChange as ((value: string) => void) | undefined,
           defaultValue: Array.isArray(defaultValue) ? defaultValue[0] : defaultValue,
         };
       }
