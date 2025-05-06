@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +10,7 @@
 @import './components/ui/toast.css';
 @import './components/ui/radio-group.css';
 @import './components/ui/pill.css';
+@import './components/ui/segmented-control.css';
 
 @layer base {
   :root {
