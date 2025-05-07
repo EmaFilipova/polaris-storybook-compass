@@ -20,6 +20,7 @@ import InlineInfoPage from "./pages/components/InlineInfoPage"
 import PillPage from "./pages/components/PillPage"
 import SegmentedControlPage from "./pages/components/SegmentedControlPage"
 import TextAreaPage from "./pages/components/TextAreaPage"
+import TextFieldPage from "./pages/components/TextFieldPage"
 import MeatballMenuPage from "./pages/components/meatball-menu"
 
 const queryClient = new QueryClient()
@@ -50,6 +51,8 @@ const App = () => (
           <Route path="/components/segmented-control" element={<SegmentedControlPage />} /> {/* Added new segmented control route */}
           <Route path="/components/textarea" element={<TextAreaPage />} /> {/* Added new textarea route */}
           <Route path="/components/text-area" element={<TextAreaPage />} /> {/* Adding hyphenated version of the route */}
+          <Route path="/components/text-field" element={<TextFieldPage />} /> {/* Added new text field route */}
+          <Route path="/components/textfield" element={<TextFieldPage />} /> {/* Adding non-hyphenated version of the route */}
           <Route path="/components/meatball-menu" element={<MeatballMenuPage />} /> {/* Added meatball menu route */}
           <Route path="*" element={<NotFound />} />
         </Routes>

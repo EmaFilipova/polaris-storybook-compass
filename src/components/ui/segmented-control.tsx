@@ -94,14 +94,14 @@ const SegmentedControl = React.forwardRef<HTMLDivElement, SegmentedControlProps>
           value: Array.isArray(value) ? value : value ? [value] : undefined,
           onValueChange: onValueChange as ((value: string[]) => void) | undefined,
           defaultValue: Array.isArray(defaultValue) ? defaultValue : defaultValue ? [defaultValue] : undefined,
-        };
+        } as ToggleGroupMultipleProps;
       } else {
         return {
           type: "single" as const,
           value: Array.isArray(value) ? value[0] : value,
           onValueChange: onValueChange as ((value: string) => void) | undefined,
           defaultValue: Array.isArray(defaultValue) ? defaultValue[0] : defaultValue,
-        };
+        } as ToggleGroupSingleProps;
       }
     }, [type, value, onValueChange, defaultValue]);
 
