@@ -1,8 +1,9 @@
+
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { type Direction } from "@radix-ui/react-toggle-group"
+import type { ToggleGroupSingleProps, ToggleGroupMultipleProps } from "@radix-ui/react-toggle-group"
 
 const segmentedControlVariants = cva(
   "inline-flex rounded-md border p-1 bg-white shadow-sm",

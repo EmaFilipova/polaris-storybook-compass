@@ -49,6 +49,7 @@ const App = () => (
           <Route path="/components/pill" element={<PillPage />} /> {/* Added new pill route */}
           <Route path="/components/segmented-control" element={<SegmentedControlPage />} /> {/* Added new segmented control route */}
           <Route path="/components/textarea" element={<TextAreaPage />} /> {/* Added new textarea route */}
+          <Route path="/components/text-area" element={<TextAreaPage />} /> {/* Adding hyphenated version of the route */}
           <Route path="/components/meatball-menu" element={<MeatballMenuPage />} /> {/* Added meatball menu route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
