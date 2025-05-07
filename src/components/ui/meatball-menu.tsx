@@ -49,7 +49,7 @@ export function MeatballMenu({
   const [open, setOpen] = React.useState(false)
   const [radioValues, setRadioValues] = React.useState<Record<string, string>>({})
 
-  const renderMenuItem = (item: MeatballMenuItem, index: number) => {
+  const renderMenuItem = (item: MeatballMenuItem, index: number | string) => {
     if (item.type === "separator") {
       return <DropdownMenuSeparator key={index} />
     }

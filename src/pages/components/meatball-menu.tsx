@@ -1,198 +1,130 @@
 
-import React from "react"
-import { MeatballMenu, MeatballMenuItem } from "@/components/ui/meatball-menu"
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle 
-} from "@/components/ui/card"
+import React from 'react';
+import { Check, ChevronRight, CreditCard, LogOut, PlusCircle, Settings, Trash, User } from 'lucide-react';
+import { TypographyH1, TypographyH2, TypographyP } from '@/components/ui/typography';
+import { MeatballMenu, MeatballMenuItem } from '@/components/ui/meatball-menu';
 
-const MeatballMenuPage = () => {
-  const basicItems: MeatballMenuItem[] = [
-    { label: "Item 1", onClick: () => console.log("Item 1 clicked") },
-    { label: "Item 2", onClick: () => console.log("Item 2 clicked") },
-    { label: "Item 3", onClick: () => console.log("Item 3 clicked") },
-    { label: "Item 4", onClick: () => console.log("Item 4 clicked") },
-  ]
-
-  const actionItems: MeatballMenuItem[] = [
-    { label: "View", onClick: () => console.log("View clicked") },
-    { label: "Download", onClick: () => console.log("Download clicked") },
-    { label: "Share", onClick: () => console.log("Share clicked") },
-    { label: "Delete", onClick: () => console.log("Delete clicked") },
-  ]
-
-  const checkboxItems: MeatballMenuItem[] = [
-    { 
-      label: "Story", 
-      type: "checkbox", 
-      checked: true, 
-      onClick: () => console.log("Story toggled") 
-    },
-    { 
-      label: "Image", 
-      type: "checkbox", 
-      checked: true, 
-      onClick: () => console.log("Image toggled") 
-    },
-    { 
-      label: "Graph", 
-      type: "checkbox", 
-      checked: false, 
-      onClick: () => console.log("Graph toggled") 
-    },
-    { 
-      label: "Video", 
-      type: "checkbox", 
-      checked: false, 
-      onClick: () => console.log("Video toggled") 
-    },
-  ]
-
-  const radioItems: MeatballMenuItem[] = [
-    { 
-      label: "Draft", 
-      type: "radio", 
-      radioGroup: "status", 
-      value: "draft",
-      onClick: () => console.log("Draft selected") 
-    },
-    { 
-      label: "Needs review", 
-      type: "radio", 
-      radioGroup: "status", 
-      value: "needs-review",
-      onClick: () => console.log("Needs review selected") 
-    },
-    { 
-      label: "Ready", 
-      type: "radio", 
-      radioGroup: "status", 
-      value: "ready",
-      onClick: () => console.log("Ready selected") 
-    },
-    { 
-      label: "Published", 
-      type: "radio", 
-      radioGroup: "status", 
-      value: "published",
-      onClick: () => console.log("Published selected") 
-    },
-  ]
-
-  const nestedItems: MeatballMenuItem[] = [
-    { label: "Item", onClick: () => console.log("Item clicked") },
-    { label: "Item", onClick: () => console.log("Item clicked") },
-    { 
-      label: "Item", 
-      type: "submenu", 
-      subItems: [
-        { label: "Item", onClick: () => console.log("Nested item clicked") },
-        { label: "Item", onClick: () => console.log("Nested item clicked") },
-        { label: "Item", onClick: () => console.log("Nested item clicked") },
-      ]
-    },
-    { label: "Item", onClick: () => console.log("Item clicked") },
-    { label: "Item", onClick: () => console.log("Item clicked") },
-  ]
-
-  const complexItems: MeatballMenuItem[] = [
-    { label: "Section 1", type: "label" },
-    { label: "Action 1", onClick: () => console.log("Action 1 clicked") },
-    { label: "Action 2", onClick: () => console.log("Action 2 clicked") },
-    { type: "separator" },
-    { label: "Section 2", type: "label" },
-    { 
-      label: "Options", 
-      type: "submenu", 
-      subItems: [
-        { label: "Option 1", onClick: () => console.log("Option 1 clicked") },
-        { label: "Option 2", onClick: () => console.log("Option 2 clicked") },
-      ]
-    },
-    { type: "separator" },
-    { 
-      label: "Enable feature", 
-      type: "checkbox", 
-      checked: false, 
-      onClick: () => console.log("Feature toggled") 
-    },
-  ]
-
+export default function MeatballMenuPage() {
   return (
     <div className="container py-10">
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold mb-4">Meatball Menu</h1>
-        <p className="text-muted-foreground">
-          The meatball menu (three-dot menu) is a UI pattern commonly used for contextual actions.
-        </p>
-      </div>
+      <TypographyH1>Meatball Menu</TypographyH1>
+      <TypographyP className="text-muted-foreground mt-2 mb-8">
+        A versatile menu component for actions and options.
+      </TypographyP>
 
       <div className="grid gap-8">
-        <Card>
-          <CardHeader>
-            <CardTitle>Basic Menu</CardTitle>
-            <CardDescription>A simple menu with text items.</CardDescription>
-          </CardHeader>
-          <CardContent className="flex items-center justify-center p-10 border-t">
-            <MeatballMenu items={basicItems} />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Action Menu</CardTitle>
-            <CardDescription>Common actions like view, download, share, and delete.</CardDescription>
-          </CardHeader>
-          <CardContent className="flex items-center justify-center p-10 border-t">
-            <MeatballMenu items={actionItems} />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Checkbox Menu</CardTitle>
-            <CardDescription>Menu with toggleable checkbox items.</CardDescription>
-          </CardHeader>
-          <CardContent className="flex items-center justify-center p-10 border-t">
-            <MeatballMenu items={checkboxItems} />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Radio Menu</CardTitle>
-            <CardDescription>Menu with mutually exclusive radio items.</CardDescription>
-          </CardHeader>
-          <CardContent className="flex items-center justify-center p-10 border-t">
-            <MeatballMenu items={radioItems} />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Nested Menu</CardTitle>
-            <CardDescription>Menu with nested submenus.</CardDescription>
-          </CardHeader>
-          <CardContent className="flex items-center justify-center p-10 border-t">
-            <MeatballMenu items={nestedItems} />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Complex Menu</CardTitle>
-            <CardDescription>Complex menu with labels, separators, and mixed item types.</CardDescription>
-          </CardHeader>
-          <CardContent className="flex items-center justify-center p-10 border-t">
-            <MeatballMenu items={complexItems} />
-          </CardContent>
-        </Card>
+        <BasicExample />
+        <AdvancedExample />
       </div>
     </div>
-  )
+  );
 }
 
-export default MeatballMenuPage
+function BasicExample() {
+  const menuItems: MeatballMenuItem[] = [
+    {
+      label: "Edit",
+      onClick: () => console.log("Edit clicked"),
+      icon: <Settings size={16} />,
+    },
+    {
+      label: "Duplicate",
+      onClick: () => console.log("Duplicate clicked"),
+      icon: <PlusCircle size={16} />,
+    },
+    {
+      label: "Archive",
+      onClick: () => console.log("Archive clicked"),
+      disabled: true,
+    },
+    { 
+      type: "separator", 
+      label: "-"
+    },
+    {
+      label: "Delete",
+      onClick: () => console.log("Delete clicked"),
+      icon: <Trash size={16} className="text-red-500" />,
+    },
+  ];
+
+  return (
+    <div className="border rounded-lg p-6">
+      <TypographyH2>Basic Usage</TypographyH2>
+      <TypographyP className="text-muted-foreground mt-2 mb-4">
+        A simple menu with icons and a separator.
+      </TypographyP>
+
+      <div className="flex justify-end mt-4 border rounded p-4">
+        <MeatballMenu items={menuItems} />
+      </div>
+    </div>
+  );
+}
+
+function AdvancedExample() {
+  const menuItems: MeatballMenuItem[] = [
+    {
+      label: "Profile",
+      icon: <User size={16} />,
+      type: "submenu",
+      subItems: [
+        { label: "View Profile", onClick: () => console.log("View Profile clicked") },
+        { label: "Edit Profile", onClick: () => console.log("Edit Profile clicked") },
+      ],
+    },
+    {
+      label: "Status",
+      type: "checkbox",
+      checked: true,
+      onClick: () => console.log("Status toggled"),
+    },
+    { 
+      type: "separator", 
+      label: "-" 
+    },
+    {
+      label: "Theme",
+      type: "radio",
+      value: "light",
+      radioGroup: "theme",
+      onClick: () => console.log("Light theme selected"),
+    },
+    {
+      label: "Dark",
+      type: "radio",
+      value: "dark",
+      radioGroup: "theme",
+      onClick: () => console.log("Dark theme selected"),
+    },
+    {
+      label: "System",
+      type: "radio",
+      value: "system",
+      radioGroup: "theme",
+      onClick: () => console.log("System theme selected"),
+    },
+    { 
+      type: "separator", 
+      label: "-"
+    },
+    {
+      label: "Logout",
+      icon: <LogOut size={16} />,
+      onClick: () => console.log("Logout clicked"),
+    },
+  ];
+
+  return (
+    <div className="border rounded-lg p-6">
+      <TypographyH2>Advanced Usage</TypographyH2>
+      <TypographyP className="text-muted-foreground mt-2 mb-4">
+        A complex menu with submenu, checkboxes, and radio buttons.
+      </TypographyP>
+
+      <div className="flex justify-end mt-4 border rounded p-4">
+        <MeatballMenu items={menuItems} />
+      </div>
+    </div>
+  );
+}

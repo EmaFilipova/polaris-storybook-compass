@@ -19,6 +19,8 @@ import ModalPage from "./pages/components/ModalPage"
 import InlineInfoPage from "./pages/components/InlineInfoPage"
 import PillPage from "./pages/components/PillPage"
 import SegmentedControlPage from "./pages/components/SegmentedControlPage"
+import TextAreaPage from "./pages/components/TextAreaPage"
+import MeatballMenuPage from "./pages/components/meatball-menu"
 
 const queryClient = new QueryClient()
 
@@ -46,6 +48,8 @@ const App = () => (
           <Route path="/components/inline-info" element={<InlineInfoPage />} /> {/* Added new inline-info route */}
           <Route path="/components/pill" element={<PillPage />} /> {/* Added new pill route */}
           <Route path="/components/segmented-control" element={<SegmentedControlPage />} /> {/* Added new segmented control route */}
+          <Route path="/components/textarea" element={<TextAreaPage />} /> {/* Added new textarea route */}
+          <Route path="/components/meatball-menu" element={<MeatballMenuPage />} /> {/* Added meatball menu route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
