@@ -1,0 +1,28 @@
+.card-homepage {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+
+  background-color: white !important;
+  text-align: center;
+  padding-inline: 0;
+
+  border-color: #e3e3e3 !important;
+
+  > div {
+    padding-inline: 16px;
+
+    h3 {
+      color: black !important;
+    }
+
+    a {
+      background-color: #0552b5 !important;
+      color: white;
+
+      &:hover {
+        background-color: #2186eb !important;
+      }
+    }
+  }
+}
