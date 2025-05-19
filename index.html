@@ -27,7 +27,26 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/polaris-storybook-compass/assets/index-CrFqy34v.js"></script>
+
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+    <script type="module" crossorigin src="/polaris-storybook-compass/assets/index-D_gVhzvK.js"></script>
     <link rel="stylesheet" crossorigin href="/polaris-storybook-compass/assets/index-CM2bL5X6.css">
   </head>
 
