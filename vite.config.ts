@@ -16,3 +16,5 @@ export default defineConfig(({ mode }) => ({
   },
   base: "/polaris-storybook-compass/",
 }));
+
+// https://vitejs.dev/config/
